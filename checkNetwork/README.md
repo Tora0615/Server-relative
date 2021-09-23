@@ -6,7 +6,9 @@ If network is dead, it will trigger reboot command.
 This service recommand to use with linux **crontab** service.
 
 
-## crontab command
+## crontab setting
+
+* Use ```crontab -e``` to edit settings.
 
 ```shell=
 # ┌───────────── 分鐘 Minutes   (0 - 59)
@@ -20,7 +22,7 @@ This service recommand to use with linux **crontab** service.
 ```
 
 example : 
-```*/10 * * * * checkNetwork.sh```
+```*/10 * * * * /{$AbsolutePath}/checkNetwork.sh```
 --> Every 10 minute execute checkNetwork.sh
 
 
