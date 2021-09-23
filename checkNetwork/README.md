@@ -19,7 +19,12 @@ This service recommand to use with linux **crontab** service.
 # * * * * * /path/to/command
 ```
 
+example : 
+```*/10 * * * * checkNetwork.sh```
+--> Every 10 minute execute checkNetwork.sh
+
 
 ## Links
 [Reboot if ping fails](https://community.spiceworks.com/topic/457945-reboot-if-ping-fails)
+
 [Linux 設定 crontab 例行性工作排程教學與範例](https://blog.gtwang.org/linux/linux-crontab-cron-job-tutorial-and-examples/)
