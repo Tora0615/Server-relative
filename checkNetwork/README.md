@@ -4,13 +4,12 @@ If network is dead, it will trigger reboot command.
 
 ## Notice
 This service recommand to use with linux **crontab** service.
-
+**Warning** : this script **MUST** run in root user's credentials.
+   * So use ```sudo crontab -e``` to add the command.
 
 ## crontab setting
 
 * Use ```crontab -e``` to edit settings.
-   * **Warning** : this script **MUST** run in root user's credentials.
-        * So use ```sudo crontab -e``` to add the command.
 
 ```shell=
 # ┌───────────── 分鐘 Minutes   (0 - 59)
@@ -23,12 +22,12 @@ This service recommand to use with linux **crontab** service.
 # * * * * * /path/to/command
 ```
 
-example : 
+* example : 
 ```*/10 * * * * /home/user/service/checkNetwork.sh > /dev/null 2>&1```
 
 --> Every 10 minute execute checkNetwork.sh
 
-sysyem log when running success : 
+* sysyem log when running success : 
 ```shell=
 Sep 23 23:00:01 user-VirtualBox CRON[2183]: (root) CMD (/home/user/service/checkNetwork.sh > /dev/null 2>&1)
 Sep 23 23:00:07 user-VirtualBox cron[591]: (CRON) INFO (pidfile fd = 3)
@@ -59,7 +58,7 @@ Solution : Add ```> /dev/null 2>&1``` in the command end.
 
 This will redirect output to NULL file. (A file can let output disappear.)
 
-or you can install mail service.
+Or you can install mail service.
 
 
 
@@ -67,3 +66,5 @@ or you can install mail service.
 [Reboot if ping fails](https://community.spiceworks.com/topic/457945-reboot-if-ping-fails)
 
 [Linux 設定 crontab 例行性工作排程教學與範例](https://blog.gtwang.org/linux/linux-crontab-cron-job-tutorial-and-examples/)
+
+[crontab 開機自動執行指令](https://www.opencli.com/linux/crontab-autorun-command-boot)
