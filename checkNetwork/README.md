@@ -4,7 +4,8 @@ If network is dead, it will trigger reboot command.
 
 ## Notice
 This service recommand to use with linux **crontab** service.
-**Warning** : this script **MUST** run in root user's credentials.
+
+**Warning** : If use crontab to schedules commands execution, the script **MUST** run in root user's credentials.
    * So use ```sudo crontab -e``` to add the command.
 
 ## crontab setting
@@ -58,7 +59,6 @@ Solution : Add ```> /dev/null 2>&1``` in the command end.
 
 This will redirect output to NULL file. (A file can let output disappear.)
 
-Or you can install mail service.
 
 
 
